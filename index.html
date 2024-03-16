@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+
+          <span class="navbar-brand">HEEJUN SHOP</span>
+
+          <span class="badge">Dark 🔄</span>
+
+          <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav> 
+      <script>
+
+      $(window).on('scroll', function(){
+       var 스크롤양1 = window.scrollY;
+        if(스크롤양1 > 100){
+          $('.navbar-brand').css('font-size','15px')
+        } else{
+          $('.navbar-brand').css('font-size','30px')
+        }
+      });
+
+
+
+
+
+
+
+
+
+        var count = 0;
+
+        $('.badge').on('click', function(){
+          count++;
+          if(count % 2 != 0){
+            $('.badge').css('color', 'black');
+            $('.badge').css('background-color', 'white');
+            
+          }
+          else{
+            $('.badge').css('color', 'white');
+            $('.badge').css('background-color', 'black');
+            }});
+
+
+
+        // badge클릭시 클릭횟수가 홀수면 light, 짝수면 dark
+        
+
+      </script>
+
+
+
+      <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+
+<div class="main-bg">
+  <h4>Shirts on Sale</h4>
+  <button class="login">
+    로그인
+  </button>
+</div>
+
+
+
+<script>
+    $('.navbar-toggler').on('click', function(){
+        $('.list-group').toggleClass('show');
+    })
+</script>
+
+
+
+<div class="black-bg">
+    <div class="white-bg">
+      <h4>로그인하세요</h4>
+      <form action="success.html">
+        <div class="my-3">
+          <input type="text" class="form-control" id="email">
+         </div>
+         <div class="my-3">
+           <input type="password" class="form-control" id="password">
+         </div>
+         <button type="submit" class="btn btn-primary" id="send">전송</button>
+         <button type="button" btn-danger id="close">닫기</button>
+      </form> 
+      
+    </div>
+  </div> 
+
+<script>
+
+// $('#email').on('input',function(){
+//   console.log('123')
+// });
+
+
+  // 전송버튼 클릭 -> input에 입력한 값이 공백이면 알림창
+
+  $('#send').on('click', function(){
+  if ($('#email').val() == '') {
+    alert('아이디를 입력하세요.');
+  } else if ($('#password').val().length < 6) {
+    alert('비밀번호를 6자 이상 입력하세요.');
+  } else if ($('#password').val() == '') {
+    alert('비밀번호를 입력하세요.');
+  } else if (!/\S+@\S+\.\S+/.test($('#email').val())) {
+    alert('올바른 이메일 형식으로 입력하세요.');
+  } else if (!/[A-Z]/.test($('#password').val())) {
+    alert('대문자를 포함하세요.');
+    }
+});
+
+
+
+
+
+function 삼육구게임(a) {
+  if(a%9 == 0){
+    console.log('박수박수')
+  } else if(a%3 == 0){
+    console.log('박수')
+  } else {console.log('통과')}
+}
+
+function 합격(a, b){
+  if(a > 100  || b > 100){
+    alert('장난 ㄴ')
+  }
+  else if((a>40 && b>40) && (a+b>=120)){
+    console.log('합격')
+  } 
+   
+  else{
+    console.log('불합격')
+  }
+}
+
+
+
+</script>
+
+
+
+<script>
+
+$('.login').on('click',function(){
+    $('.black-bg').css('visibility','visible')
+    $('.black-bg').css('opacity','1')
+})
+$('#close').on('click',function(){
+    $('.black-bg').css('visibility','hidden')
+    $('.black-bg').css('opacity','0')
+})
+
+$('.black-bg').on('click', function(e){
+  // e.target; // 유저가 실제로 누른 것
+  // console.log('e.target')
+  // e.currentTarget; // 이벤트리스너 달린 곳
+  // this;
+  // e.preventDefault(); // 이벤트 기본동작 막아줌
+  // e.stopImmediatePropagation(); // 상위요소로 이벤트 버블링 막아줌
+console.log(e.target);
+console.log($('.black-bg')); //jquery는 다름.
+console.log(document.querySelector('.black-bg'));
+
+  if(e.target == document.querySelector('.black-bg')){
+    $('.black-bg').css('visibility','hidden')
+    $('.black-bg').css('opacity','0')
+  }
+
+        });
+</script>
+
+<script>
+
+
+var first = 360;
+
+function 리필(first){
+  총량 = first + (first*2/3) + (first *2/3 * 2/3)
+  console.log(총량)
+}
+ 
+
+
+
+
+
+</script>
+
+<p>태조 이성계가 태어난 년도는?</p>
+<input type="text" id="answer">
+<button id="send-answer">제출</button>
+
+
+<script>
+
+var count = 0;
+var 입력값 = $('#answer').val();
+
+  $('#send-answer').on('click', function(){
+    if(입력값 == 1335 ){
+      alert('성공!')
+    } else if(count < 3 && 입력값 != 1335){
+      count +=1;
+      alert('땡!')
+    } else{
+      count +=1;
+      alert('멍청이!')
+    }
+    
+
+
+
+  })
+</script>
+
+<div class="alert alert-danger">
+  <span id="num">5</span>초 이내 구매시 사은품 증정
+</div>
+
+<script>
+
+var count = 5;
+
+setInterval(Timer, 1000);
+
+function Timer(){
+  count -= 1;
+  if( count >= 0 ){    
+    $('#num').html(count);
+    
+  } else{
+    setTimeout(function(){ 
+     $('.alert').hide();
+     }, 1000);
+  }
+  
+  }
+
+
+</script>
+
+<div style="overflow: hidden; margin-top: 10px;">
+  <div class="slide-container">
+    <div class="slide-box">
+      <img src="car1.png">
+     </div>
+    <div class="slide-box">
+      <img src="car2.png">
+    </div>
+    <div class="slide-box">
+      <img src="car3.png">
+   </div>
+  </div>
+</div>
+<button class="back">이전</button>
+<button class="slide-1">1</button>
+<button class="slide-2">2</button>
+<button class="slide-3">3</button>
+<button class="next">다음</button>
+
+<script>
+  var count = 0;
+
+  $('.slide-1').on('click', function(){
+    count = 0;
+    $('.slide-container').css('transform', 'translateX(' + count + 'vw)');
+  });
+
+  $('.slide-2').on('click', function(){
+    count = -100;
+    $('.slide-container').css('transform', 'translateX(' + count + 'vw)');
+  });
+
+  $('.slide-3').on('click', function(){
+    count = -200;
+    $('.slide-container').css('transform', 'translateX(' + count + 'vw)');
+  });
+
+  $('.next').on('click', function(){
+    count -= 100;
+    $('.slide-container').css('transform', 'translateX(' + count + 'vw)');
+  });
+
+  $('.back').on('click', function(){
+    count += 100;
+    $('.slide-container').css('transform', 'translateX(' + count + 'vw)');
+  });
+
+
+  // 함수에 분과 초를 차례로 파라미터로 입력하면 ms단위로 바꿔서 뱉어주는 함수를 만들어봅시다.
+
+function clock(m,s){
+  var ms = (m*60 + s)*1000
+  return ms;
+}
+
+</script>
+
+<div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll;"> 이 약관은 전기통신사업법령 및 정보통신망이용촉진 및 정보보호 등에 관한 법률에 따라 한겨레신문㈜ 및 관계사{씨네21 ㈜(이상, 자회사) ㈜한겨레플러스(이상, 제휴사)} (이하 `회사`)에서 제공하는 모든 서비스(이하 `서비스`)의 이용절차,조건등 서비스 이용과 관련한 회사와 회원의 권리 및 의무에 관련된 사항을 규정함을 목적으로 합니다.
+</div>
+
+<!-- div의 스크롤바 내린 양 + 눈에 보이는 div 높이 == div 실제 높이 -->
+<script>
+
+
+
+$('.lorem').on('scroll', function(){
+  var 스크롤양 = document.querySelector('.lorem').scrollTop;
+  var 실제높이 = document.querySelector('.lorem').scrollHeight;
+  console.log(스크롤양, 실제높이)
+  if(스크롤양+105 == 실제높이){
+    alert('동의하쉴?')
+  }
+
+})
+
+</script>
+
+
+
+
+
+
+
+
+<div style="height: 1000px;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>
