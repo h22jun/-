@@ -43,3 +43,23 @@ $('.list').click(function(e){
     탭열기(e.target.dataset.id);
 
 })
+
+var a = '<option>30</option><option>32</option><option>34</option>'
+var b = `<option>90</option>
+<option>95</option>
+<option>100</option>`
+
+$('#closet-select').on('input', function(){
+if ($("#closet-select option:selected").val() == 'shirts') {
+  $('#shirts-select').removeClass('shirts-size');
+  $('#shirts-select').html(b)
+};
+if ($("#closet-select option:selected").val() == 'pants') {
+  $('#shirts-select').removeClass('shirts-size');
+  $('#shirts-select').html(a)
+};
+if($("#closet-select option:selected").val() == 'hat'){
+  $('#shirts-select').addClass('shirts-size');
+}
+});
+

@@ -115,3 +115,7 @@
   .show {
     display: block;
   }
+
+  .shirts-size{
+    display: none;
+  }
