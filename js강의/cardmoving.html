@@ -10,9 +10,9 @@
 <body>
     <div class="card_background">
 
-        <div class="card-background">
+        <div class="card-background" style="transition : all 0.2s">
             <div class="card_box">
-              <img src="card1.png">
+              <img id = "card_1" src="card1.png">
             </div>
             <div class="card_box">
               <img src="card2.png">
@@ -30,6 +30,10 @@
             console.log(높이)
             var y = (-1/500) * 높이 + 115/50;
             $('.card_box').eq(0).css('opacity', y);
+          
+            var z = (-18/125) * 높이 + 865.6
+            $('#card_1').eq(0).css('width', z);
+
 
         })
 

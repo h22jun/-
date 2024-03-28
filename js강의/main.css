@@ -55,13 +55,14 @@
 
 .slide-container{
   width: 300vw;
-  transition: all 1s;
   transform: translateX(0vw);
+  transition: 0.1s;
 }
 
 .slide-box{
   width: 100vw;
   float: left;
+  transition: 0.5s;
 }
 
 .slide-box img{
