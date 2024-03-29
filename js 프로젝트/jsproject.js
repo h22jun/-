@@ -6,7 +6,7 @@ $.get('store.json').done(function(data){
         var 템플릿 = 
         `<div class="card">
             <div class="card"><img src="${a.photo}">
-              <p class="card-text">${a.title}</p>
+              <p class="card-text" id="card-text${a.id}">${a.title}</p>
               <p>${a.brand}</p>
               <p>가격 : ${a.price}</p>
             </div>
@@ -77,7 +77,32 @@ $(document).on('click', '.btn-jang', function(){
     }
 });
 
+$(document).ready(function(){
+  $('#search-btn').click(function(){
+    let card_title_val = $('.card-text').attr('id')
+    switch(card_title_val){
+      case 'card-text0' : 
+      console.log('0번');
+      break;
 
+      case 'card-text1' : 
+      console.log('1번');
+      break;
+      
+      case 'card-text2' : 
+      console.log('2번');
+      break;
+
+      case 'card-text3' : 
+      console.log('3번');
+      break;
+
+      default:
+        console.log('아무것도 아님');
+    }
+
+      var searchValue = $('#card-text')
+  })});
 
 
 
